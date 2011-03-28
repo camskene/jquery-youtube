@@ -1,3 +1,16 @@
+/*
+ * jQuery Embiggen plugin
+ *
+ * Author: Cameron Skene
+ * Description: Embed YouTube videos using YouTubes iframe or object/embed methods.
+ * URL: https://github.com/camskene/jquery-youtube
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
+
 (function($){
     
     $.fn.youtube = function(options) {
