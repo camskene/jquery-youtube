@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>jQuery YouTube Plugin</title>
+        
+        <!-- Sytaxhighlighter -->
+        <link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css"/>
+    	<link type="text/css" rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css"/>
+        
+        <style type="text/css">
+        
+            /*
+            Styles layout this page. They have nothing to to with the youtube plugin.
+            They have also been 'compressed'.
+            ______________________________________________________________________________
+            ****************************************************************************** */
+            body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#444;}
+            #container{width:750px;margin:0 auto;}
+            h2,h3,h4{clear:both;}
+            #default a, #options a{float:left;display:block;margin:0 10px 48px;}
+            img{vertical-align:text-bottom;}
+            code{font-family:"Consolas","Bitstream Vera Sans Mono","Courier New",Courier,monospace !important;color:#000;}
+            hr{clear:both;margin: 4em 0}
+            .attribute {font-style: italic; color: #999;}
+            .syntaxhighlighter {margin: 2em 0 !important;}
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            
+            <h1>jQuery YouTube Plugin</h1>
+            <p>Embed YouTube videos using YouTubes iframe or object/embed methods.</p>
+            <p><strong><a href="http://code.google.com/p/swfobject/">SwfObject</a> is required for the object/embed method</strong>. SwfObject is not required for iframe method.</p>
+            <p>By defalut the iframe method is used.</p>
+            
+            <hr />
+            
+            <h2>Download</h2>
+            <p>Download from <a href="https://github.com/camskene/jquery-youtube">Github</a>.</p>
+            
+            <hr />
+            
+            <h2>Options</h2>
+            
+            <p>There are 9 options (default values shown).</p>
+            <pre class="brush: js">
+                iframe: true,
+                videoID: "",        // required
+                width: "480",       // required
+                height: "390",      // required
+                play: "0",
+                loop: "0",          // object/embed only
+                link: "external",   // object/embed only
+                controls: "1",      // iframe only
+                autohide: "1"
+            </pre>
+            
+            <hr />
+            
+            <h2>Setup</h2>
+            
+            <h3>HTML</h3>
+            
+            <pre class="brush: xml">
+                <div id="foo">
+                    Alternative content.
+                </div><!-- #foo-bar -->
+            </pre>
+            
+            <h3>JS</h3>
+            
+            <pre class="brush: js">
+                $("#foo").youtube({
+                	videoID: "_DdE7g5iRj4",
+                	width: "480",
+                	height: "390"
+                });
+            </pre>
+            
+            <hr />
+            
+            <h3>Demo - iframe (default)</h3>
+            
+            <pre class="brush: js">
+                $("#video1").youtube({
+                	videoID: "_DdE7g5iRj4",
+                	width: "480",
+                	height: "390"
+                });
+            </pre>
+            
+            <div id="video1">
+                Alternative content.
+            </div><!-- #video -->
+            
+            
+            <hr />
+            
+            <h3>Demo - object/embed</h3>
+            <pre class="brush: js">
+                $("#video2").youtube({
+                    iframe: false,
+                	videoID: "fGutQ3Oyh94",
+                	width: "480",
+                	height: "390",
+                	loop: "1"
+                });
+            </pre>
+            
+            <div id="video2">
+                Alternative content.
+            </div><!-- #video -->
+            
+            <hr />
+            
+            
+            
+        </div><!-- #container -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+        <script src="jquery.youtube.js"></script>
+        <script>
+            $("#video1").youtube({
+            	videoID: "_DdE7g5iRj4",
+            	width: "480",
+            	height: "390",
+            	autohide: "1"
+            });
+        
+            $("#video2").youtube({
+                iframe: false,
+            	videoID: "fGutQ3Oyh94",
+            	width: "480",
+            	height: "390",
+            	loop: "1"
+            });
+        </script>
+        
+        <!-- http://alexgorbatchev.com/SyntaxHighlighter -->
+        <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
+    	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+    	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js"></script>
+    	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js"></script>
+        <script>
+            SyntaxHighlighter.defaults['toolbar'] = false;
+        </script>
+        <script>SyntaxHighlighter.all();</script>
+    </body>
+</html>
